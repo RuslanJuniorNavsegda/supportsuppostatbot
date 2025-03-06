@@ -14,13 +14,13 @@ bot.start((ctx) => {
       [
         Markup.button.url(
           "🖥 Десктопная версия",
-          "https://ruslanjuniornavsegda.github.io/supportbot/"
+          "https://kapinoska.github.io/SuppostatBot/"
         ),
       ],
       [
         Markup.button.webApp(
           "📱 Мобильная версия",
-          "https://ruslanjuniornavsegda.github.io/supportbot/"
+          "https://kapinoska.github.io/SuppostatBot/"
         ),
       ],
     ])
