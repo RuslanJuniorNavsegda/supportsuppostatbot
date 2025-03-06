@@ -13,13 +13,13 @@ bot.start((ctx) => {
     Markup.inlineKeyboard([
       [
         Markup.button.url(
-          "🖥 Десктопная версия",
+          "🖥 Десктоп",
           "https://kapinoska.github.io/SuppostatBot/"
         ),
       ],
       [
         Markup.button.webApp(
-          "📱 Мобильная версия",
+          "📱 Мобильная",
           "https://kapinoska.github.io/SuppostatBot/"
         ),
       ],
@@ -27,8 +27,20 @@ bot.start((ctx) => {
   );
 });
 
-bot.launch();
+// Обработка ошибок
+bot.catch((err) => {
+  console.error("Ошибка бота:", err);
+});
 
-// Обработка завершения работы
+// Запуск
+bot
+  .launch()
+  .then(() => console.log("Бот запущен!"))
+  .catch((err) => {
+    console.error("Ошибка запуска:", err);
+    process.exit(1);
+  });
+
+// Корректное завершение
 process.once("SIGINT", () => bot.stop("SIGINT"));
 process.once("SIGTERM", () => bot.stop("SIGTERM"));
